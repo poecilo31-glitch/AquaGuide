@@ -1,295 +1,85 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AquaGuide Animalis</title>
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:#eef3f8;
-color:#222;
-}
-
-header{
-background:linear-gradient(135deg,#E30000,#253595);
-color:white;
-padding:20px;
-position:sticky;
-top:0;
-z-index:1000;
-box-shadow:0 4px 12px rgba(0,0,0,.25);
-}
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-max-width:1200px;
-margin:auto;
-}
-
-nav h1{font-size:32px}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:18px;
-flex-wrap:wrap;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-}
-
-.hero{
-max-width:1200px;
-margin:30px auto;
-padding:20px;
-display:grid;
-grid-template-columns:1.2fr 1fr;
-gap:25px;
-align-items:center;
-}
-
-.hero img{
-width:100%;
-border-radius:25px;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
-}
-
-.hero h2{
-font-size:40px;
-margin-bottom:15px;
-}
-
-.hero p{
-font-size:18px;
-line-height:1.5;
-}
-
-.btn{
-display:inline-block;
-margin-top:20px;
-background:#E30000;
-color:white;
-padding:12px 22px;
-border-radius:12px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
-
-#search{
-width:100%;
-padding:15px;
-border-radius:12px;
-border:1px solid #ccc;
-font-size:18px;
-margin-bottom:25px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:22px;
-}
-
-.card{
-background:white;
-border-radius:22px;
-overflow:hidden;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-cursor:pointer;
-transition:.25s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card img{
-width:100%;
-height:180px;
-object-fit:cover;
-}
-
-.info{
-padding:18px;
-}
-
-.widgets{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:20px;
-margin-top:35px;
-}
-
-.widget{
-background:white;
-padding:20px;
-border-radius:20px;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-
-.widget input,.widget select{
-width:100%;
-padding:12px;
-margin:8px 0;
-border-radius:10px;
-border:1px solid #ccc;
-}
-
-button{
-width:100%;
-padding:12px;
-border:none;
-border-radius:10px;
-background:#E30000;
-color:white;
-font-size:16px;
-cursor:pointer;
-}
-
-footer{
-background:#1b1b1b;
-color:white;
-padding:30px;
-text-align:center;
-margin-top:40px;
-}
-
-#modal{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.65);
-justify-content:center;
-align-items:center;
-padding:20px;
-}
-
-.modal-content{
-background:white;
-max-width:650px;
-width:100%;
-border-radius:22px;
-overflow:hidden;
-}
-
-.modal-content img{
-width:100%;
-height:260px;
-object-fit:cover;
-}
-
-.modal-body{
-padding:22px;
-}
-
-.close{
-position:absolute;
-right:25px;
-top:15px;
-font-size:30px;
-cursor:pointer;
-color:white;
-}
-
-.tag{
-display:inline-block;
-background:#253595;
-color:white;
-padding:6px 10px;
-border-radius:20px;
-margin:4px;
-font-size:13px;
-}
-
-@media(max-width:800px){
-.hero{
-grid-template-columns:1fr;
-}
-}
+body{font-family:Arial,sans-serif;background:#eef3f8;color:#222}
+header{background:linear-gradient(135deg,#E30000,#253595);color:white;padding:20px}
+nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+nav h1{font-size:30px}
+nav ul{display:flex;gap:15px;list-style:none}
+nav a{color:white;text-decoration:none;font-weight:bold}
+.hero{max-width:1200px;margin:30px auto;padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
+.hero img{width:100%;border-radius:20px;object-fit:cover;height:320px}
+.hero h2{font-size:38px;margin-bottom:15px}
+.btn{display:inline-block;background:#E30000;color:white;padding:12px 22px;border-radius:12px;text-decoration:none;margin-top:15px}
+.container{max-width:1200px;margin:auto;padding:20px}
+#recherche{width:100%;padding:15px;font-size:18px;border-radius:12px;border:1px solid #ccc;margin-bottom:25px}
+.grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.carte{background:white;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.08);cursor:pointer}
+.carte img{width:100%;height:180px;object-fit:cover}
+.info{padding:16px}
+.widgets{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:35px}
+.widget{background:white;border-radius:20px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.widget input,.widget select{width:100%;padding:10px;margin:8px 0;border-radius:10px;border:1px solid #ccc}
+button{width:100%;padding:12px;border:none;border-radius:10px;background:#E30000;color:white;font-size:16px;cursor:pointer}
+#modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);justify-content:center;align-items:center;padding:20px}
+.fenetre{background:white;border-radius:20px;max-width:650px;width:100%;overflow:hidden}
+.fenetre img{width:100%;height:260px;object-fit:cover}
+.contenu{padding:20px}
+.fermer{position:absolute;top:15px;right:25px;color:white;font-size:35px;cursor:pointer}
+footer{background:#222;color:white;text-align:center;padding:30px;margin-top:40px}
+@media(max-width:800px){.hero{grid-template-columns:1fr}}
 </style>
-
 </head>
-
 <body>
 
 <header>
 <nav>
 <h1>🐟 AquaGuide Animalis</h1>
-
 <ul>
 <li><a href="#">Accueil</a></li>
 <li><a href="#">Catalogue</a></li>
 <li><a href="#">Compatibilité</a></li>
 <li><a href="#">Calculateur</a></li>
-<li><a href="#">Mode vendeur</a></li>
 </ul>
-
 </nav>
 </header>
 
 <section class="hero">
-
 <div>
-
 <h2>Le guide aquariophile nouvelle génération</h2>
-
-<p>Scannez un QR Code, trouvez un poisson compatible et obtenez instantanément les paramètres de maintenance.</p>
-
+<p>Scannez un QR Code, trouvez un poisson compatible et consultez instantanément ses paramètres de maintenance.</p>
 <a class="btn" href="#catalogue">Découvrir les espèces</a>
-
 </div>
-
 <img src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=1200&q=80">
-
 </section>
 
 <div class="container">
 
-<input id="search" placeholder="🔍 Rechercher une espèce..." />
+<input id="recherche" placeholder="🔍 Rechercher une espèce...">
 
-<div id="catalogue" class="grid"></div>
+<div id="catalogue" class="grille"></div>
 
 <div class="widgets">
 
 <div class="widget">
-
 <h2>🧮 Calculateur d'aquarium</h2>
-
 <input id="litres" type="number" value="120">
-
 <button onclick="calculer()">Calculer</button>
-
 <p id="resultat"></p>
-
 </div>
 
 <div class="widget">
-
 <h2>🤝 Compatibilité</h2>
-
-<select id="fish1"></select>
-
-<select id="fish2"></select>
-
+<select id="poisson1"></select>
+<select id="poisson2"></select>
 <button onclick="compatibilite()">Vérifier</button>
-
 <p id="compat"></p>
-
 </div>
 
 </div>
@@ -297,33 +87,19 @@ grid-template-columns:1fr;
 </div>
 
 <footer>
-
-<p>© AquaGuide Animalis – Prototype de présentation</p>
-
+AquaGuide Animalis — Prototype de présentation
 </footer>
 
 <div id="modal">
-
-<span class="close" onclick="fermer()">✕</span>
-
-<div class="modal-content">
-
-<img id="modalImg">
-
-<div class="modal-body">
-
-<div id="fiche"></div>
-
+<div class="fenetre">
+<img id="imageFiche">
+<div class="contenu" id="fiche"></div>
 </div>
-
-</div>
-
 </div>
 
 <script>
 
 const poissons=[
-
 {
 nom:"Gourami perlé",
 latin:"Trichopodus leerii",
@@ -333,10 +109,8 @@ temp:"23–28°C",
 ph:"6,0–7,5",
 taille:"12 cm",
 groupe:"5+",
-alimentation:"Omnivore",
 compat:["Platy","Corydoras Panda"]
 },
-
 {
 nom:"Guppy",
 latin:"Poecilia reticulata",
@@ -346,10 +120,8 @@ temp:"22–28°C",
 ph:"7,0–8,2",
 taille:"5 cm",
 groupe:"6+",
-alimentation:"Omnivore",
 compat:["Platy","Corydoras Panda"]
 },
-
 {
 nom:"Platy",
 latin:"Xiphophorus maculatus",
@@ -359,10 +131,8 @@ temp:"20–26°C",
 ph:"7,0–8,2",
 taille:"6 cm",
 groupe:"6+",
-alimentation:"Omnivore",
 compat:["Guppy","Corydoras Panda","Gourami perlé"]
 },
-
 {
 nom:"Corydoras Panda",
 latin:"Corydoras panda",
@@ -372,144 +142,75 @@ temp:"22–26°C",
 ph:"6,0–7,5",
 taille:"5 cm",
 groupe:"6+",
-alimentation:"Omnivore",
 compat:["Guppy","Platy","Gourami perlé"]
 }
-
 ];
 
 const catalogue=document.getElementById("catalogue");
 
 function afficher(liste){
-
 catalogue.innerHTML="";
-
 liste.forEach(p=>{
-
-const card=document.createElement("div");
-
-card.className="card";
-
-card.innerHTML=`
-
+const carte=document.createElement("div");
+carte.className="carte";
+carte.innerHTML=`
 <img src="${p.image}">
-
 <div class="info">
-
 <h3>${p.nom}</h3>
-
 <p><em>${p.latin}</em></p>
-
 <p>🌊 ${p.volume}</p>
-
 <p>🌡 ${p.temp}</p>
-
 </div>`;
-
-card.onclick=()=>ouvrir(p);
-
-catalogue.appendChild(card);
-
+carte.onclick=()=>ouvrir(p);
+catalogue.appendChild(carte);
 });
-
 }
 
 function ouvrir(p){
-
 document.getElementById("modal").style.display="flex";
-
-document.getElementById("modalImg").src=p.image;
-
+document.getElementById("imageFiche").src=p.image;
 document.getElementById("fiche").innerHTML=`
-
 <h2>${p.nom}</h2>
-
-<p><em>${p.latin}</em></p>
-
-<hr style="margin:15px 0;">
-
-<p><b>🌊 Volume :</b> ${p.volume}</p>
-
-<p><b>🌡 Température :</b> ${p.temp}</p>
-
-<p><b>💧 pH :</b> ${p.ph}</p>
-
-<p><b>📏 Taille :</b> ${p.taille}</p>
-
-<p><b>👥 Vie en groupe :</b> ${p.groupe}</p>
-
-<p><b>🍽 Alimentation :</b> ${p.alimentation}</p>
-
-<div style="margin-top:15px;">
-
-${p.compat.map(c=>`<span class="tag">${c}</span>`).join("")}
-
-</div>
-
-`;
-
+<p><em>${p.latin}</em></p><br>
+<p><b>Volume minimum :</b> ${p.volume}</p>
+<p><b>Température :</b> ${p.temp}</p>
+<p><b>pH :</b> ${p.ph}</p>
+<p><b>Taille adulte :</b> ${p.taille}</p>
+<p><b>Vie en groupe :</b> ${p.groupe}</p><br>
+<p><b>Compatible avec :</b> ${p.compat.join(", ")}</p>`;
 }
 
-function fermer(){
-
-document.getElementById("modal").style.display="none";
-
-}
+document.getElementById("modal").onclick=e=>{
+if(e.target.id==="modal") document.getElementById("modal").style.display="none";
+};
 
 afficher(poissons);
 
-search.oninput=e=>{
-
+recherche.oninput=e=>{
 const t=e.target.value.toLowerCase();
-
 afficher(poissons.filter(p=>(p.nom+p.latin).toLowerCase().includes(t)));
-
 };
 
 poissons.forEach(p=>{
-
-fish1.innerHTML+=`<option>${p.nom}</option>`;
-
-fish2.innerHTML+=`<option>${p.nom}</option>`;
-
+poisson1.innerHTML+=`<option>${p.nom}</option>`;
+poisson2.innerHTML+=`<option>${p.nom}</option>`;
 });
 
 function calculer(){
-
 const v=Number(litres.value);
-
-if(v<60)
-
-resultat.innerHTML="Petit aquarium : idéal pour un Betta.";
-
-else if(v<120)
-
-resultat.innerHTML="Convient aux Guppys et Platys.";
-
-else if(v<200)
-
-resultat.innerHTML="Très bon aquarium communautaire.";
-
-else
-
-resultat.innerHTML="Volume parfait pour un groupe de Gouramis perlés.";
-
+if(v<60) resultat.innerHTML="Petit aquarium : Betta conseillé.";
+else if(v<120) resultat.innerHTML="Convient aux Guppys et Platys.";
+else if(v<200) resultat.innerHTML="Aquarium communautaire conseillé.";
+else resultat.innerHTML="Volume idéal pour un groupe de Gouramis perlés.";
 }
-
 calculer();
 
 function compatibilite(){
-
-const a=poissons.find(x=>x.nom===fish1.value);
-
-compat.innerHTML=a.compat.includes(fish2.value)
-
-?"🟢 Compatible"
-
-:"🟠 À vérifier";
-
+const p=poissons.find(x=>x.nom===poisson1.value);
+compat.innerHTML=p.compat.includes(poisson2.value)
+?"🟢 Compatibles."
+:"🟠 Compatibilité à vérifier.";
 }
-
 </script>
 
 </body>
