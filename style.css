@@ -1,7 +1,12 @@
-
-body{font-family:Arial;margin:0;background:#eef3f8}
-header{background:linear-gradient(135deg,#E30000,#253595);color:#fff;padding:18px}
-nav a{color:#fff;margin-right:15px;text-decoration:none;font-weight:bold}
-.hero{padding:40px;background:#fff}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:20px}
-.card{background:#fff;border-radius:16px;padding:18px;text-decoration:none;color:#222;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#eef3f8;color:#222}
+header{background:linear-gradient(135deg,#E30000,#253595);color:white;padding:18px;position:sticky;top:0}
+nav{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:auto;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;margin-left:15px;font-weight:bold}
+.hero{padding:40px;text-align:center;background:white}
+.hero h2{font-size:40px;margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;padding:20px}
+.card{background:white;border-radius:18px;padding:20px;text-decoration:none;color:#222;box-shadow:0 8px 18px rgba(0,0,0,.12);transition:.25s}
+.card:hover{transform:translateY(-5px)}
+button{background:#E30000;color:white;border:none;padding:12px 20px;border-radius:10px;cursor:pointer}
+footer{background:#222;color:white;text-align:center;padding:25px;margin-top:30px}
