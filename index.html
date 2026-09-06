@@ -1,2 +1,92 @@
 
-<!DOCTYPE html><html lang='fr'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>AquaGuide Pro</title><link rel='stylesheet' href='css/style.css'></head><body><header><h1>🐟 AquaGuide Animalis Pro</h1><nav><a href='index.html'>Accueil</a><a href='catalogue.html'>Catalogue</a><a href='admin/index.html'>Administration</a></nav></header><section class='hero'><h2>Le guide aquariophile nouvelle génération</h2><p>Base professionnelle prête à évoluer.</p></section><main class='grid'><a class='card' href='poissons/gourami-perle.html'>Gourami perlé</a><a class='card' href='poissons/guppy.html'>Guppy</a><a class='card' href='poissons/platy.html'>Platy</a><a class='card' href='poissons/corydoras-panda.html'>Corydoras Panda</a></main></body></html>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaGuide Animalis Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <h1>🐟 AquaGuide Animalis</h1>
+
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="compatibilite.html">Compatibilité</a></li>
+        <li><a href="calculateur.html">Calculateur</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h2>Le guide aquariophile nouvelle génération</h2>
+      <p>Scannez un QR Code, trouvez une espèce compatible et consultez ses paramètres instantanément.</p>
+      <a href="#catalogue" class="bouton">Découvrir les espèces</a>
+    </div>
+
+    <AsyncImage query="aquarium planté eau douce professionnel" aspectRatio="5:4" width="100%" maxHeight=420/>
+  </section>
+
+  <main class="container">
+
+    <input id="recherche" placeholder="Rechercher une espèce...">
+
+    <section id="catalogue" class="grille">
+
+      <div class="carte">
+        <AsyncImage query="Gourami Perlé Trichopodus leerii aquarium fish" aspectRatio="5:4" width="100%" maxHeight=220/>
+        <div class="info">
+          <h3>Gourami perlé</h3>
+          <p><em>Trichopodus leerii</em></p>
+          <p>🌊 200 L minimum</p>
+          <p>🌡 23 à 28°C</p>
+        </div>
+      </div>
+
+      <div class="carte">
+        <AsyncImage query="Guppy Poecilia reticulata aquarium fish" aspectRatio="5:4" width="100%" maxHeight=220/>
+        <div class="info">
+          <h3>Guppy</h3>
+          <p><em>Poecilia reticulata</em></p>
+          <p>🌊 60 L minimum</p>
+          <p>🌡 22 à 28°C</p>
+        </div>
+      </div>
+
+      <div class="carte">
+        <AsyncImage query="Platy Xiphophorus maculatus aquarium fish" aspectRatio="5:4" width="100%" maxHeight=220/>
+        <div class="info">
+          <h3>Platy</h3>
+          <p><em>Xiphophorus maculatus</em></p>
+          <p>🌊 80 L minimum</p>
+          <p>🌡 20 à 26°C</p>
+        </div>
+      </div>
+
+      <div class="carte">
+        <AsyncImage query="Corydoras Panda aquarium fish" aspectRatio="5:4" width="100%" maxHeight=220/>
+        <div class="info">
+          <h3>Corydoras Panda</h3>
+          <p><em>Corydoras panda</em></p>
+          <p>🌊 80 L minimum</p>
+          <p>🌡 22 à 26°C</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>AquaGuide Animalis – Prototype de présentation</p>
+  </footer>
+
+</body>
+</html>
