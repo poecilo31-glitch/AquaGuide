@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,9 +7,8 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-
 body{
-font-family:Arial,sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 background:#eef3f8;
 color:#222;
 }
@@ -18,12 +16,73 @@ color:#222;
 header{
 background:linear-gradient(135deg,#E30000,#253595);
 color:white;
-padding:25px;
-text-align:center;
+padding:20px;
+position:sticky;
+top:0;
+z-index:1000;
 box-shadow:0 4px 12px rgba(0,0,0,.25);
 }
 
-header h1{font-size:36px}
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+max-width:1200px;
+margin:auto;
+}
+
+nav h1{font-size:32px}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+max-width:1200px;
+margin:30px auto;
+padding:20px;
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:25px;
+align-items:center;
+}
+
+.hero img{
+width:100%;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.hero h2{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.5;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+background:#E30000;
+color:white;
+padding:12px 22px;
+border-radius:12px;
+text-decoration:none;
+font-weight:bold;
+}
 
 .container{
 max-width:1200px;
@@ -31,43 +90,43 @@ margin:auto;
 padding:20px;
 }
 
-.search input{
+#search{
 width:100%;
 padding:15px;
-font-size:18px;
 border-radius:12px;
 border:1px solid #ccc;
+font-size:18px;
 margin-bottom:25px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
+gap:22px;
 }
 
 .card{
 background:white;
-border-radius:20px;
+border-radius:22px;
 overflow:hidden;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
 cursor:pointer;
 transition:.25s;
 }
 
-.card:hover{transform:translateY(-6px)}
-
-.hero{
-height:180px;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:70px;
-color:white;
-background:linear-gradient(135deg,#0f766e,#2563eb);
+.card:hover{
+transform:translateY(-5px);
 }
 
-.info{padding:18px}
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.info{
+padding:18px;
+}
 
 .widgets{
 display:grid;
@@ -79,12 +138,11 @@ margin-top:35px;
 .widget{
 background:white;
 padding:20px;
-border-radius:18px;
+border-radius:20px;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
-.widget input,
-.widget select{
+.widget input,.widget select{
 width:100%;
 padding:12px;
 margin:8px 0;
@@ -103,13 +161,19 @@ font-size:16px;
 cursor:pointer;
 }
 
-button:hover{background:#b40000}
+footer{
+background:#1b1b1b;
+color:white;
+padding:30px;
+text-align:center;
+margin-top:40px;
+}
 
 #modal{
 display:none;
 position:fixed;
 inset:0;
-background:rgba(0,0,0,.6);
+background:rgba(0,0,0,.65);
 justify-content:center;
 align-items:center;
 padding:20px;
@@ -117,19 +181,29 @@ padding:20px;
 
 .modal-content{
 background:white;
-max-width:600px;
+max-width:650px;
 width:100%;
-border-radius:20px;
-padding:25px;
-position:relative;
+border-radius:22px;
+overflow:hidden;
+}
+
+.modal-content img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.modal-body{
+padding:22px;
 }
 
 .close{
 position:absolute;
+right:25px;
 top:15px;
-right:18px;
-font-size:28px;
+font-size:30px;
 cursor:pointer;
+color:white;
 }
 
 .tag{
@@ -138,53 +212,112 @@ background:#253595;
 color:white;
 padding:6px 10px;
 border-radius:20px;
+margin:4px;
 font-size:13px;
-margin:3px;
+}
+
+@media(max-width:800px){
+.hero{
+grid-template-columns:1fr;
+}
 }
 </style>
+
 </head>
 
 <body>
 
 <header>
+<nav>
 <h1>🐟 AquaGuide Animalis</h1>
-<p>Guide interactif d'aquariophilie</p>
+
+<ul>
+<li><a href="#">Accueil</a></li>
+<li><a href="#">Catalogue</a></li>
+<li><a href="#">Compatibilité</a></li>
+<li><a href="#">Calculateur</a></li>
+<li><a href="#">Mode vendeur</a></li>
+</ul>
+
+</nav>
 </header>
+
+<section class="hero">
+
+<div>
+
+<h2>Le guide aquariophile nouvelle génération</h2>
+
+<p>Scannez un QR Code, trouvez un poisson compatible et obtenez instantanément les paramètres de maintenance.</p>
+
+<a class="btn" href="#catalogue">Découvrir les espèces</a>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=1200&q=80">
+
+</section>
 
 <div class="container">
 
-<div class="search">
-<input id="search" placeholder="Rechercher une espèce...">
-</div>
+<input id="search" placeholder="🔍 Rechercher une espèce..." />
 
 <div id="catalogue" class="grid"></div>
 
 <div class="widgets">
 
 <div class="widget">
+
 <h2>🧮 Calculateur d'aquarium</h2>
+
 <input id="litres" type="number" value="120">
+
 <button onclick="calculer()">Calculer</button>
-<p id="resultat" style="margin-top:15px;"></p>
+
+<p id="resultat"></p>
+
 </div>
 
 <div class="widget">
+
 <h2>🤝 Compatibilité</h2>
+
 <select id="fish1"></select>
+
 <select id="fish2"></select>
+
 <button onclick="compatibilite()">Vérifier</button>
-<p id="compat" style="margin-top:15px;"></p>
-</div>
+
+<p id="compat"></p>
 
 </div>
 
 </div>
+
+</div>
+
+<footer>
+
+<p>© AquaGuide Animalis – Prototype de présentation</p>
+
+</footer>
 
 <div id="modal">
-<div class="modal-content">
+
 <span class="close" onclick="fermer()">✕</span>
+
+<div class="modal-content">
+
+<img id="modalImg">
+
+<div class="modal-body">
+
 <div id="fiche"></div>
+
 </div>
+
+</div>
+
 </div>
 
 <script>
@@ -194,7 +327,7 @@ const poissons=[
 {
 nom:"Gourami perlé",
 latin:"Trichopodus leerii",
-emoji:"🐠",
+image:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
 volume:"200 L",
 temp:"23–28°C",
 ph:"6,0–7,5",
@@ -207,7 +340,7 @@ compat:["Platy","Corydoras Panda"]
 {
 nom:"Guppy",
 latin:"Poecilia reticulata",
-emoji:"🐟",
+image:"https://images.unsplash.com/photo-1520302630591-fd1c66edc1d7?auto=format&fit=crop&w=800&q=80",
 volume:"60 L",
 temp:"22–28°C",
 ph:"7,0–8,2",
@@ -220,7 +353,7 @@ compat:["Platy","Corydoras Panda"]
 {
 nom:"Platy",
 latin:"Xiphophorus maculatus",
-emoji:"🐠",
+image:"https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?auto=format&fit=crop&w=800&q=80",
 volume:"80 L",
 temp:"20–26°C",
 ph:"7,0–8,2",
@@ -233,7 +366,7 @@ compat:["Guppy","Corydoras Panda","Gourami perlé"]
 {
 nom:"Corydoras Panda",
 latin:"Corydoras panda",
-emoji:"🐡",
+image:"https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=800&q=80",
 volume:"80 L",
 temp:"22–26°C",
 ph:"6,0–7,5",
@@ -259,7 +392,7 @@ card.className="card";
 
 card.innerHTML=`
 
-<div class="hero">${p.emoji}</div>
+<img src="${p.image}">
 
 <div class="info">
 
@@ -284,6 +417,8 @@ catalogue.appendChild(card);
 function ouvrir(p){
 
 document.getElementById("modal").style.display="flex";
+
+document.getElementById("modalImg").src=p.image;
 
 document.getElementById("fiche").innerHTML=`
 
@@ -323,47 +458,41 @@ document.getElementById("modal").style.display="none";
 
 afficher(poissons);
 
-document.getElementById("search").oninput=e=>{
+search.oninput=e=>{
 
 const t=e.target.value.toLowerCase();
 
-afficher(poissons.filter(p=>
-
-(p.nom+p.latin).toLowerCase().includes(t)
-
-));
+afficher(poissons.filter(p=>(p.nom+p.latin).toLowerCase().includes(t)));
 
 };
 
-const f1=document.getElementById("fish1");
-const f2=document.getElementById("fish2");
-
 poissons.forEach(p=>{
 
-f1.innerHTML+=`<option>${p.nom}</option>`;
-f2.innerHTML+=`<option>${p.nom}</option>`;
+fish1.innerHTML+=`<option>${p.nom}</option>`;
+
+fish2.innerHTML+=`<option>${p.nom}</option>`;
 
 });
 
 function calculer(){
 
-const v=Number(document.getElementById("litres").value);
-
-let txt="";
+const v=Number(litres.value);
 
 if(v<60)
-txt="Petit aquarium : Betta conseillé.";
+
+resultat.innerHTML="Petit aquarium : idéal pour un Betta.";
 
 else if(v<120)
-txt="Idéal pour Guppys et Platys.";
+
+resultat.innerHTML="Convient aux Guppys et Platys.";
 
 else if(v<200)
-txt="Aquarium communautaire avec Corydoras.";
+
+resultat.innerHTML="Très bon aquarium communautaire.";
 
 else
-txt="Volume adapté aux Gouramis perlés.";
 
-document.getElementById("resultat").innerHTML=txt;
+resultat.innerHTML="Volume parfait pour un groupe de Gouramis perlés.";
 
 }
 
@@ -371,15 +500,13 @@ calculer();
 
 function compatibilite(){
 
-const a=poissons.find(x=>x.nom===f1.value);
+const a=poissons.find(x=>x.nom===fish1.value);
 
-const ok=a.compat.includes(f2.value);
+compat.innerHTML=a.compat.includes(fish2.value)
 
-document.getElementById("compat").innerHTML=
+?"🟢 Compatible"
 
-ok
-?"🟢 Ces deux espèces sont compatibles."
-:"🟠 Compatibilité à vérifier.";
+:"🟠 À vérifier";
 
 }
 
