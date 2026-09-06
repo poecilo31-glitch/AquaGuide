@@ -1,0 +1,7 @@
+
+body{font-family:Arial;margin:0;background:#eef3f8}
+header{background:linear-gradient(135deg,#E30000,#253595);color:#fff;padding:18px}
+nav a{color:#fff;margin-right:15px;text-decoration:none;font-weight:bold}
+.hero{padding:40px;background:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:20px}
+.card{background:#fff;border-radius:16px;padding:18px;text-decoration:none;color:#222;box-shadow:0 6px 16px rgba(0,0,0,.12)}
